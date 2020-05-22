@@ -14,10 +14,6 @@
     <name>ci</name>
     <description>Goda's project for testing various CI tools</description>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
