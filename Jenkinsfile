@@ -13,6 +13,7 @@ pipeline {
         steps {
             sh "ls -ltr"
             sh "pwd"
+            sh "chmod 755 *"
             sh "./mvnw clean install -DskipTests"
         }
     }
