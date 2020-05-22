@@ -10,6 +10,6 @@ env:
 #  api_key: c246bd5a-a369-4a01-afc1-0456c6e476ec
 #  app: ci-testing-springboot
 after_success:
-  - docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
+  - docker login -u $DOCKER_USERNAME --password --password-stdin
   - ./mvnw spring-boot:build-image
   - ./mvnw exec:exec
