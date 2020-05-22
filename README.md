@@ -27,5 +27,6 @@ See this video for more details - https://www.youtube.com/watch?v=V4kYbHlQYHg
 2. Kube connection details goda-k8s/kube config from user/goda folder
 3. 192.168.0.33:50030 is the jenkins tunnel
 4. pod template name - goda-kube, labels - goda-kubepod
+4.1 When you delete and run another instance, open and save it otherwise it will not recognize the label goda-kubepod
 5. container template - goda-jnlp-slave, jenkinsci/jnlp-slave:latest (seems to be deprecated), /home/jenkins
 6. Setup credentials - goda-kube-config, paste things from your kube config
