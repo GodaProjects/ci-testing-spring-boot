@@ -11,14 +11,39 @@ pipeline {
 
     stage('Build App') {
         steps {
+            // retaining it see some debug info
             sh "ls -ltr"
             sh "pwd"
+            // This is the one which allowed me to run the ./mvnw
             sh "chmod 755 *"
+            //Build the project
             sh "./mvnw clean install -DskipTests"
         }
     }
 
-    stage('Deploy App') {
+    stage('Test App') {
+        steps {
+            sh "./mvnw test"
+        }
+    }
+
+    stage('Build Image for App') {
+        steps {
+            sh "./mvnw spring-boot:build-image"
+        }
+    }
+
+    stage('Upload the image to docker hub') {
+        steps {
+            withCredentials([usernamePassword(credentialsId: 'godaprojects-dockercreds', passwordVariable: 'password', usernameVariable: 'user')]) {
+                // the code in here can access $password and $user
+                sh "docker login -u $user -p $password"
+            }
+            sh "./mvnw exec:exec"
+        }
+    }
+
+    stage('Kubernates Deploy App') {
       steps {
         script {
           kubernetesDeploy(configs: "goda-app.yaml", kubeconfigId: "goda-kube-config")
