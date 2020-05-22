@@ -10,5 +10,5 @@ env:
 #  api_key: c246bd5a-a369-4a01-afc1-0456c6e476ec
 #  app: ci-testing-springboot
 after_success:
-  - mvnw spring-boot:build-image
-  - mvnw exec:exec
+  - ./mvnw spring-boot:build-image
+  - ./mvnw exec:exec
