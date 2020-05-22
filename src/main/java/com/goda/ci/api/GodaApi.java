@@ -11,7 +11,7 @@ import java.util.Map;
 @RestController("/")
 public class GodaApi {
 
-    @Value("${env.name?:}")
+    @Value("${env.name:defaultGoda}")
     private String nameFromEnv;
 
     @GetMapping
@@ -19,6 +19,7 @@ public class GodaApi {
         Map<String, Object> godaMap = new HashMap<>();
         godaMap.put("msg","Hi from Goda!");
         godaMap.put("envProp",nameFromEnv);
+        godaMap.put("anotherProp",nameFromEnv);
         return godaMap;
     }
 }

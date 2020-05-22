@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @AutoConfigureMockMvc
 class GodaApiTest {
 
-    @Value("${env.name?:}")
+    @Value("${env.name:defaultGoda}")
     private String nameFromEnv;
 
     @Autowired
@@ -37,6 +37,6 @@ class GodaApiTest {
    @Test
     void getHelloGodaApi() throws Exception {
        mockMvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON)).andExpect(status()
-               .isOk()).andExpect(content().string(equalTo("{\"msg\":\"Hi from Goda!\",\"envProp\":\""+nameFromEnv+"\"}")));
+               .isOk()).andExpect(content().string(equalTo("{\"msg\":\"Hi from Goda!\",\"anotherProp\":\""+nameFromEnv+"\",\"envProp\":\""+nameFromEnv+"\"}")));
     }
 }
