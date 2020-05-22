@@ -33,6 +33,6 @@ class GodaApiTest {
    @Test
     void getHelloGodaApi() throws Exception {
        mockMvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON)).andExpect(status()
-               .isOk()).andExpect(content().string(equalTo("{\"msg\":\"Hi from Goda!\"}")));
+               .isOk()).andExpect(content().string(equalTo("{\"msg\":\"Hello from Goda!\"}")));
     }
 }
