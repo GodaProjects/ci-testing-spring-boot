@@ -1,8 +1,6 @@
 pipeline {
-  agent { label 'goda-kubepod' }
-
+  agent none
   stages {
-
     stage('Checkout Source') {
       steps {
         git url:'https://github.com/GodaProjects/ci-testing-spring-boot.git', branch:'master'
@@ -44,7 +42,9 @@ pipeline {
     }
 
     stage('Kubernates Deploy App') {
+      agent { label 'goda-kubepod' }
       steps {
+        git url:'https://github.com/GodaProjects/ci-testing-spring-boot.git', branch:'master'
         script {
           kubernetesDeploy(configs: "goda-app.yaml", kubeconfigId: "goda-kube-config")
         }
