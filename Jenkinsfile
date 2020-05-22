@@ -1,4 +1,14 @@
 pipeline {
+    agent any
+
+    stages {
+        stage('Build App') {
+            steps {
+                sh "./mvnw clean install -DskipTests"
+            }
+        }
+    }
+
 
   agent { label 'goda-kubepod' }
 
