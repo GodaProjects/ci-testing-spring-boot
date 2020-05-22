@@ -3,3 +3,7 @@ before_install:
   - chmod +x mvnw
 env:
   - env.name=GodaKutty
+deploy:
+  provider: heroku
+  api_key: c246bd5a-a369-4a01-afc1-0456c6e476ec
+  app: ci-testing-springboot
