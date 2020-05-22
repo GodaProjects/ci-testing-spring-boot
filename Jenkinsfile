@@ -12,25 +12,19 @@ pipeline {
 
     stage('Build App') {
         steps {
-            sh "./mvnw clean install -DskipTests"
+            sh "sudo ./mvnw clean install -DskipTests"
         }
     }
 
     stage('Test App') {
         steps {
-            sh "./mvnw test"
+            sh "sudo ./mvnw test"
         }
     }
 
     stage('Build Image for App') {
         steps {
-            sh "./mvnw spring-boot:build-image"
-        }
-    }
-
-    stage('Push Image to Docker Hub') {
-        steps {
-            sh "./mvnw spring-boot:build-image"
+            sh "sudo ./mvnw spring-boot:build-image"
         }
     }
 
