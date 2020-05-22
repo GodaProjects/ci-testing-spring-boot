@@ -11,6 +11,8 @@ pipeline {
 
     stage('Build App') {
         steps {
+            sh "ls -ltr"
+            sh "pwd"
             sh "./mvnw clean install -DskipTests"
         }
     }
