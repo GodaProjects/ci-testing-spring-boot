@@ -27,11 +27,16 @@ pipeline {
 
     stage('Build Image for App') {
         steps {
-            sh "./mvnw spring-boot:build-image"
+            withCredentials([usernamePassword(credentialsId: 'godaprojects-dockercreds', passwordVariable: 'password', usernameVariable: 'user')]) {
+                // the code in here can access $password and $user
+                sh "docker login -u $user -p $password"
+            }
+            sh "./mvnw com.google.cloud.tools:jib-maven-plugin:2.3.0:build"
         }
     }
 
-    stage('Upload the image to docker hub') {
+    // Not needed anymore since Jib takes care of both creating and uploading the image.
+    /*stage('Upload the image to docker hub') {
         steps {
             withCredentials([usernamePassword(credentialsId: 'godaprojects-dockercreds', passwordVariable: 'password', usernameVariable: 'user')]) {
                 // the code in here can access $password and $user
@@ -39,7 +44,7 @@ pipeline {
             }
             sh "./mvnw exec:exec"
         }
-    }
+    }*/
 
     stage('Kubernates Deploy App') {
       agent { label 'goda-kubepod' }
