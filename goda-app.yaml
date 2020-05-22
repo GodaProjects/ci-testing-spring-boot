@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: goda-spring-boot-app
+  name: goda-spring-boot-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goda-spring-boot-app
+  template:
+    metadata:
+      labels:
+        app: goda-spring-boot-app
+    spec:
+      containers:
+        - image: godaprojects/springboot-ci-test:1.0.0
+          name: goda-spring-boot-app
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: goda-spring-boot-app
+  name: goda-spring-boot-app
+spec:
+  ports:
+    - nodePort: 32030
+      port: 3030
+      protocol: TCP
+      targetPort: 3030
+  selector:
+    app: goda-spring-boot-app
+  type: NodePort
