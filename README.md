@@ -18,9 +18,12 @@ This concludes playing around with travis. FOr information on how to test using 
 ### Jenkins 
 See this video for more details - https://www.youtube.com/watch?v=V4kYbHlQYHg
 1. Install Jenkins as a container on local - Named volume will be managed by Docker. 
-```docker run -d --name goda-jenkins -p 4030:8080 -p 50030:50000 -v goda_jenkins_data:/var/goda_jenkins_home jenkins/jenkins:lts```
-1.1 Point to be noted here. Jenkins plugin installation will never happen in one shot properly. (Ok.. almost nothing seems to work right the first attempt. Everything only works in the second or the third attempt)
-1.2 goda/Goda@123/Goda/http://192.168.0.33:4030/ (Will change whenever network is reconnected)
+```docker run -d --name goda-jenkins -p 4030:8080 -p 50030:50000 -v goda_jenkins_data:/var/jenkins_home -u root jenkins/jenkins:lts```
+1.1 Get the initial password from logs
+```docker logs -f goda-jenkins```
+1.2 Point to be noted here. Jenkins plugin installation will never happen in one shot properly. (Ok.. almost nothing seems to work right the first attempt. Everything only works in the second or the third attempt)
+1.3 goda-k8s-cluster is the name of the cluster config 
+1.4 goda/Goda@123/Goda/http://192.168.0.33:4030/ (Will change whenever network is reconnected)
 2. Kube connection details goda-k8s/kube config from user/goda folder
 3. 192.168.0.33:50030 is the jenkins tunnel
 4. pod template name - goda-kube, labels - goda-kubepod
