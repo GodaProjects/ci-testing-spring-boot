@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -18,6 +19,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @AutoConfigureMockMvc
 class GodaApiTest {
+
+    @Value("${env.name?:}")
+    private String nameFromEnv;
 
     @Autowired
     private MockMvc mockMvc;
@@ -33,6 +37,6 @@ class GodaApiTest {
    @Test
     void getHelloGodaApi() throws Exception {
        mockMvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON)).andExpect(status()
-               .isOk()).andExpect(content().string(equalTo("{\"msg\":\"Hi from Goda!\"}")));
+               .isOk()).andExpect(content().string(equalTo("{\"msg\":\"Hi from Goda!\",\"envProp\":\""+nameFromEnv+"\"}")));
     }
 }
