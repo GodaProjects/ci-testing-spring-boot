@@ -9,6 +9,12 @@ pipeline {
       }
     }
 
+    stage('Build App') {
+        steps {
+            sh "./mvnw clean install -DskipTests"
+        }
+    }
+
     stage('Deploy App') {
       steps {
         script {
