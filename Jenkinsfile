@@ -10,6 +10,30 @@ pipeline {
       }
     }
 
+    stage('Build App') {
+        steps {
+            sh "./mvnw clean install -DskipTests"
+        }
+    }
+
+    stage('Test App') {
+        steps {
+            sh "./mvnw test"
+        }
+    }
+
+    stage('Build Image for App') {
+        steps {
+            sh "./mvnw spring-boot:build-image"
+        }
+    }
+
+    stage('Push Image to Docker Hub') {
+        steps {
+            sh "./mvnw spring-boot:build-image"
+        }
+    }
+
     stage('Deploy App') {
       steps {
         script {
