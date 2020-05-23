@@ -28,8 +28,9 @@ pipeline {
     stage('Build Image for App') {
         steps {
             script {
-                    sh "./mvnw com.google.cloud.tools:jib-maven-plugin:2.3.0:build"
-
+                withCredentials([usernamePassword(credentialsId: 'godaprojects-dockercreds', passwordVariable: 'password', usernameVariable: 'user')]) {
+                    sh "./mvnw com.google.cloud.tools:jib-maven-plugin:2.3.0:build -Djib.to.auth.username=$username -Djib.to.auth.password=$password"
+                }
             }
         }
     }
