@@ -81,7 +81,7 @@
                 <version>2.3.0</version>
                 <configuration>
                     <to>
-                        <image>https://registry.hub.docker.com/${docker.image.name.with.version}</image>
+                        <image>https://registry-1.docker.io/${docker.image.name.with.version}</image>
                     </to>
                 </configuration>
             </plugin>
