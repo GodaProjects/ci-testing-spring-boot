@@ -28,9 +28,10 @@ pipeline {
     stage('Build Image for App') {
         steps {
             script {
-                    withCredentials([usernamePassword(credentialsId: 'godaprojects-dockercreds', passwordVariable: 'password', usernameVariable: 'username')]) {
-                        sh "./mvnw  compile jib:dockerBuild -Djib.to.auth.username=$username -Djib.to.auth.password=$password"
-                    }
+            sh "chmod 755 *"
+                withCredentials([usernamePassword(credentialsId: 'godaprojects-dockercreds', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    sh "./mvnw  compile jib:dockerBuild -Djib.to.auth.username=$username -Djib.to.auth.password=$password"
+                }
 
             }
         }
