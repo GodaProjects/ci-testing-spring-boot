@@ -81,7 +81,7 @@
                 <version>2.3.0</version>
                 <configuration>
                     <to>
-                        <image>${docker.image.name}</image>
+                        <image>${docker.image.name.with.version}</image>
                     </to>
                 </configuration>
             </plugin>

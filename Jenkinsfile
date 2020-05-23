@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { label 'goda-kubepod' }
   stages {
     stage('Checkout Source') {
       steps {
@@ -47,7 +47,7 @@ pipeline {
     }*/
 
     stage('Kubernates Deploy App') {
-      agent { label 'goda-kubepod' }
+
       steps {
         git url:'https://github.com/GodaProjects/ci-testing-spring-boot.git', branch:'master'
         script {
