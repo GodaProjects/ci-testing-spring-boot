@@ -32,9 +32,22 @@ See this video for more details - https://www.youtube.com/watch?v=V4kYbHlQYHg
 6. Setup credentials - goda-kube-config, paste things from your kube config
 
 ### Jenkins - Docker
+1. Install jenkins from my own image which is inherited from the official jenkins lts image, which includes docker installed inside. And here is the command to create the jenkins container. Note the -v /var/run/docker.sock:/var/run/docker.sock in the command. See the https://stackoverflow.com/questions/36765138/bind-to-docker-socket-on-windows for further information. Note that you dont have to use the npipe:////./pipe/docker_engine since Docker anyway directly does not work on windows but a linux image on windows using Docker desktop for windows.
+```docker run -d --name goda-jenkins -p 4030:8080 -p 50030:50000 -v /var/run/docker.sock:/var/run/docker.sock -v goda_jenkins_data_2_docker_container:/var/jenkins_home -u root --privileged=true godaprojects/goda-jenkins:0.2```
+2. Now run the following command to see the log and take the password from there.
+```docker logs goda-jenkins```
+3. Then the plugins get installed.
+4. Set the credentials - goda/Wipro@123
+5. Technically things should work now even without setting up any plugins. Lets check it with the Jenkinsfile we have now.
+
+
 1. Install Docker plugin (I think thats already installed)
 2. Run this (https://stackoverflow.com/questions/47709208/how-to-find-docker-host-uri-to-be-used-in-jenkins-docker-plugin and before that go to Docker settings and enable "expose daemon on 2375" thingy )
 ```docker run -d --name docker-socat --restart=always -p 127.0.0.1:23750:2375 -v /var/run/docker.sock:/var/run/docker.sock  alpine/socat  tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock```
 3. Set up a new cloud config on Jenkins and the this should be the URI of the docker (IP of goda-socat)
 ```tcp://172.17.0.3:2375```
 4. 
+
+
+https://github.com/kubernetes/kubernetes/issues/33664
+https://stackoverflow.com/questions/32046334/where-can-i-find-the-sha256-code-of-a-docker-image

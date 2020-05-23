@@ -10,12 +10,6 @@ spec:
   selector:
     matchLabels:
       app: goda-spring-boot-app
-  minReadySeconds: 5
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
   template:
     metadata:
       labels:
@@ -25,8 +19,6 @@ spec:
         - image: godaprojects/springboot-ci-test:1.0.5-SNAPSHOT
           name: goda-spring-boot-app
           imagePullPolicy: Always
-
-
 
 ---
 apiVersion: v1
