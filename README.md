@@ -15,7 +15,7 @@ CI project for testing spring boot
  
 This concludes playing around with travis. FOr information on how to test using minikube see https://blog.travis-ci.com/2017-10-26-running-kubernetes-on-travis-ci-with-minikube and for integrating with existing k8s cluster see https://www.caveofcode.com/continuous-delivery-to-kubernetes-with-travis-ci/
 
-### Jenkins 
+### Jenkins - Kubernates
 See this video for more details - https://www.youtube.com/watch?v=V4kYbHlQYHg
 1. Install Jenkins as a container on local - Named volume will be managed by Docker. 
 ```docker run -d --name goda-jenkins -p 4030:8080 -p 50030:50000 -v goda_jenkins_data:/var/jenkins_home -u root jenkins/jenkins:lts```
@@ -30,3 +30,11 @@ See this video for more details - https://www.youtube.com/watch?v=V4kYbHlQYHg
 4.1 When you delete and run another instance, open and save it otherwise it will not recognize the label goda-kubepod
 5. container template - goda-jnlp-slave, jenkinsci/jnlp-slave:latest (seems to be deprecated), /home/jenkins
 6. Setup credentials - goda-kube-config, paste things from your kube config
+
+### Jenkins - Docker
+1. Install Docker plugin (I think thats already installed)
+2. Run this (https://stackoverflow.com/questions/47709208/how-to-find-docker-host-uri-to-be-used-in-jenkins-docker-plugin and before that go to Docker settings and enable "expose daemon on 2375" thingy )
+```docker run -d --name docker-socat --restart=always -p 127.0.0.1:23750:2375 -v /var/run/docker.sock:/var/run/docker.sock  alpine/socat  tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock```
+3. Set up a new cloud config on Jenkins and the this should be the URI of the docker (IP of goda-socat)
+```tcp://172.17.0.3:2375```
+4. 

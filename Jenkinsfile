@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'goda-docker-label' }
+  agent any
   stages {
     stage('Checkout Source') {
       steps {
