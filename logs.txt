@@ -1,0 +1,363 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.goda:ci:jar:1.0.3-SNAPSHOT
+[WARNING] The expression ${version} is deprecated. Please use ${project.version} instead.
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ----------------------------< com.goda:ci >-----------------------------
+[INFO] Building ci 1.0.3-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ ci ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ ci ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- jib-maven-plugin:2.3.0:build (default-cli) @ ci ---
+[WARNING] 'mainClass' configured in 'maven-jar-plugin' is not a valid Java class: ${start-class}
+[INFO] 
+[INFO] Containerizing application to godaprojects/springboot-ci-test:1.0.3-SNAPSHOT...
+[WARNING] Base image 'gcr.io/distroless/java:8' does not use a specific image digest - build may not be reproducible
+[INFO] Executing tasks:
+[INFO] [                              ] 0.0% complete
+[INFO] > building image to registry
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [                              ] 0.0% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] 
+[INFO] 
+[INFO] Using credentials from <to><auth> for godaprojects/springboot-ci-test:1.0.3-SNAPSHOT
+[INFO] Executing tasks:
+[INFO] [                              ] 0.0% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [                              ] 0.0% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==                            ] 5.6% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==                            ] 5.6% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] > launching application layer builders
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==                            ] 5.6% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] > building dependencies layer
+[INFO] > building classes layer
+[INFO] > building resources layer
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==                            ] 5.6% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] > building dependencies layer
+[INFO] > building classes layer
+[INFO] > building resources layer
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==                            ] 5.6% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] > building dependencies layer
+[INFO] > building classes layer
+[INFO] > building resources layer
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [====                          ] 13.0% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] > building resources layer
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [====                          ] 13.0% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] > building resources layer
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=====                         ] 16.7% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] 
+[INFO] 
+[INFO] Using base image with digest: sha256:f59b26c5ecc735514a38afbf845214383c4e2ba1fdd15a76225339b8ab7da8ef
+[INFO] Executing tasks:
+[INFO] [=====                         ] 16.7% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=====                         ] 16.7% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pull container configuration sha256:63318ff0c...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=======                       ] 22.2% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] > pulling base image manifest
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [========                      ] 27.8% complete
+[INFO] > authenticating push to registry-1.docker.io
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > building image to registry
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > launching layer pushers
+[INFO] > launching base image layer pullers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > launching layer pushers
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > launching layer pushers
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > launching layer pushers
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > launching layer pushers
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] > pushing blob sha256:fac53e9bf5b4bfd974478f853...
+[INFO] > pushing blob sha256:f84fea91c2c0a03406f5a4c7d...
+[INFO] > checking base image layer sha256:aebd67d1ef6f...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] > pushing blob sha256:fac53e9bf5b4bfd974478f853...
+[INFO] > pushing blob sha256:f84fea91c2c0a03406f5a4c7d...
+[INFO] > checking base image layer sha256:aebd67d1ef6f...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] > pushing blob sha256:fac53e9bf5b4bfd974478f853...
+[INFO] > pushing blob sha256:f84fea91c2c0a03406f5a4c7d...
+[INFO] > checking base image layer sha256:aebd67d1ef6f...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==========                    ] 33.3% complete
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] > pushing blob sha256:fac53e9bf5b4bfd974478f853...
+[INFO] > pushing blob sha256:f84fea91c2c0a03406f5a4c7d...
+[INFO] > checking base image layer sha256:aebd67d1ef6f...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [============                  ] 40.7% complete
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] > checking base image layer sha256:aebd67d1ef6f...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [============                  ] 40.7% complete
+[INFO] > checking base image layer sha256:24f0c933cbef...
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] > checking base image layer sha256:aebd67d1ef6f...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=============                 ] 43.5% complete
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] > checking base image layer sha256:aebd67d1ef6f...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [==============                ] 46.3% complete
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > checking base image layer sha256:3e010093287c...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [===============               ] 49.1% complete
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:79a253f3dc051dd61c588b4fc...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [================              ] 52.8% complete
+[INFO] > checking base image layer sha256:69e2f037cdb3...
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=================             ] 55.6% complete
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=================             ] 55.6% complete
+[INFO] > launching layer pushers
+[INFO] > building image format
+[INFO] 
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=================             ] 55.6% complete
+[INFO] > launching layer pushers
+[INFO] > building image format
+[INFO] 
+[INFO] 
+[INFO] Container entrypoint set to [java, -cp, /app/resources:/app/classes:/app/libs/*, com.goda.ci.CiApplication]
+[INFO] Executing tasks:
+[INFO] [=================             ] 55.6% complete
+[INFO] > launching layer pushers
+[INFO] > building image format
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [====================          ] 66.7% complete
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [====================          ] 66.7% complete
+[INFO] > launching layer pushers
+[INFO] > pushing container configuration
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [====================          ] 66.7% complete
+[INFO] > launching layer pushers
+[INFO] > pushing blob sha256:b6f04f13355dde61e33f2697a...
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=======================       ] 77.8% complete
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=======================       ] 77.8% complete
+[INFO] > launching layer pushers
+[INFO] > launching manifest pushers
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [=======================       ] 77.8% complete
+[INFO] > launching layer pushers
+[INFO] > pushing manifest for 1.0.3-SNAPSHOT
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [===========================   ] 88.9% complete
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] 
+[INFO] Executing tasks:
+[INFO] [===========================   ] 88.9% complete
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] 
+[INFO] Built and pushed image as godaprojects/springboot-ci-test:1.0.3-SNAPSHOT
+[INFO] Executing tasks:
+[INFO] [===========================   ] 88.9% complete
+[INFO] > launching layer pushers
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.769 s
+[INFO] Finished at: 2020-05-23T08:47:37+05:30
+[INFO] ------------------------------------------------------------------------
