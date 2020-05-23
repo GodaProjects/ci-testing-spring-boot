@@ -17,7 +17,7 @@ public class GodaApi {
     @GetMapping
     public Map<String, Object> getHelloGodaApi(){
         Map<String, Object> godaMap = new HashMap<>();
-        godaMap.put("msg","Hello all (Another change 5)! from Goda!");
+        godaMap.put("msg","Hello all (Another change 6)! from Goda!");
         godaMap.put("envProp",nameFromEnv);
         godaMap.put("anotherProp",nameFromEnv);
         return godaMap;
