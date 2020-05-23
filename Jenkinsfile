@@ -28,7 +28,7 @@ pipeline {
     stage('Build Image for App') {
         steps {
             script {
-                docker.withTool('docker') {
+                docker.withServer('tcp://172.17.0.3:2375') {
                     sh "./mvnw com.google.cloud.tools:jib-maven-plugin:2.3.0:build"
                 }
             }
