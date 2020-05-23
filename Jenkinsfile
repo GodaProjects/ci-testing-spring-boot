@@ -27,8 +27,10 @@ pipeline {
 
     stage('Build Image for App') {
         steps {
-            docker.withRegistry('https://hub.docker.com') {
-                sh "./mvnw com.google.cloud.tools:jib-maven-plugin:2.3.0:build"
+            script {
+                docker.withRegistry('https://hub.docker.com') {
+                    sh "./mvnw com.google.cloud.tools:jib-maven-plugin:2.3.0:build"
+                }
             }
         }
     }
