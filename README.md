@@ -48,3 +48,8 @@ This concludes playing around with travis. FOr information on how to test using 
 #### Some links
 https://github.com/kubernetes/kubernetes/issues/33664
 https://stackoverflow.com/questions/32046334/where-can-i-find-the-sha256-code-of-a-docker-image
+
+#### Open issues
+Kubernetes does not seem to be updating well. The only way to go would be to use sha instead of tags. I am not doing that now. Later.
+
+Gode! Gode! Gode!
