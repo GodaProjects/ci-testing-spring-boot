@@ -16,7 +16,7 @@ spec:
         app: goda-spring-boot-app
     spec:
       containers:
-        - image: godaprojects/springboot-ci-test:1.0.3-SNAPSHOT
+        - image: godaprojects/springboot-ci-test:1.0.4-SNAPSHOT
           name: goda-spring-boot-app
 
 ---
