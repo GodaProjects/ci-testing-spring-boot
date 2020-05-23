@@ -27,10 +27,6 @@ pipeline {
 
     stage('Build Image for App') {
         steps {
-            withCredentials([usernamePassword(credentialsId: 'godaprojects-dockercreds', passwordVariable: 'password', usernameVariable: 'user')]) {
-                // the code in here can access $password and $user
-                sh "docker login -u $user -p $password"
-            }
             sh "./mvnw com.google.cloud.tools:jib-maven-plugin:2.3.0:build"
         }
     }
