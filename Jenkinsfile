@@ -1,9 +1,11 @@
 pipeline {
+    def dockerHome = tool 'goda-docker-global-config'
+    env.PATH = "${goda-docker-global-config}/bin:${env.PATH}"
+
     stages {
         stage('Initialize'){
             steps{
-                def dockerHome = tool 'goda-docker-global-config'
-                env.PATH = "${goda-docker-global-config}/bin:${env.PATH}"
+
             }
         }
         stage('Test') {
