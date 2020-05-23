@@ -16,7 +16,7 @@ spec:
         app: goda-spring-boot-app
     spec:
       containers:
-        - image: godaprojects/springboot-ci-test:1.0.9-SNAPSHOT
+        - image: godaprojects/springboot-ci-test:2.0.0
           name: goda-spring-boot-app
           imagePullPolicy: Always
 
