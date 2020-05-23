@@ -47,11 +47,11 @@ pipeline {
     }*/
 
     stage('Kubernates Deploy App') {
-      agent { label 'goda-kubepod' }
+      agent { label 'goda-kube-label' }
       steps {
         git url:'https://github.com/GodaProjects/ci-testing-spring-boot.git', branch:'master'
         script {
-          kubernetesDeploy(configs: "goda-app.yaml", kubeconfigId: "goda-kube-config")
+          kubernetesDeploy(configs: "goda-app.yaml", kubeconfigId: "goda-k8s-config")
         }
       }
     }
