@@ -28,7 +28,7 @@ pipeline {
     stage('Build Image for App') {
         steps {
             script {
-                docker.withTool('goda-docker-label') {
+                docker.withTool('goda-docker-container') {
                     sh "./mvnw com.google.cloud.tools:jib-maven-plugin:2.3.0:build"
                 }
             }
