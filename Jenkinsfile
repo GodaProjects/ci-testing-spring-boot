@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-    stage('Build App') {
+    /*stage('Build App') {
         steps {
             // retaining it see some debug info
             sh "ls -ltr"
@@ -23,7 +23,7 @@ pipeline {
         steps {
             sh "./mvnw test"
         }
-    }
+    }*/
 
     stage('Build Image for App') {
         steps {
