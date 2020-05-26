@@ -50,6 +50,6 @@ https://github.com/kubernetes/kubernetes/issues/33664
 https://stackoverflow.com/questions/32046334/where-can-i-find-the-sha256-code-of-a-docker-image
 
 #### Open issues
-Kubernetes does not seem to be updating well. The only way to go would be to use sha instead of tags. I am not doing that now. Later. (Small change to test Jenkins auto build on commit)
+Kubernetes does not seem to be updating well. The only way to go would be to use sha instead of tags. I am not doing that now. Later. (Small change to test Jenkins auto build on commit - Another change)
 
 Gode! Gode! Gode!
