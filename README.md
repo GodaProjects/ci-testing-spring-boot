@@ -52,4 +52,9 @@ https://stackoverflow.com/questions/32046334/where-can-i-find-the-sha256-code-of
 #### Open issues
 Kubernetes does not seem to be updating well. The only way to go would be to use sha instead of tags. I am not doing that now. Later. (Change to test Jenkins trigger) 
 
+#### Jenkins Automatic triggers
+1. Expose Jenkins on the the internet using ngrok
+2. Go to the job and enable "GitHub hook trigger for GITScm polling" under the build triggers
+3. Come to Github and setup the webhook under the repo - <URL>/github-webhook/. The trailing slash is MANDATORY. otherwise itwill not work. THen things start working.
+
 Gode! Gode! Gode!
