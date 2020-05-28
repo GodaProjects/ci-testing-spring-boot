@@ -1,4 +1,4 @@
-# Completed Project With Jenkins and Local Kubernates
+# Completed Project With Jenkins and Local kubernetes
 
 ### Travis CI Status
 [![Build Status](https://travis-ci.com/GodaProjects/ci-testing-spring-boot.svg?token=nxbpBzyPmzXPxUzh2pUd&branch=master)](https://travis-ci.com/GodaProjects/ci-testing-spring-boot)
@@ -27,7 +27,7 @@ This concludes playing around with travis. FOr information on how to test using 
 7. Create a credentials called godaprojects-dockercreds with docker hub creds.
 8. That takes care of Docker. Now over to k8s
 9. Install kubernetes and kubernetes continuous deploy plugins
-10. Create credentials for kubernates from the kubernetes config file which is in your home directory under the .kube directory
+10. Create credentials for kubernetes from the kubernetes config file which is in your home directory under the .kube directory
 11. Create a cloud configuration.
 11.1 Add the credentials there and test the connection.
 11.2 Fill the jenkins url and jenkins tunnel setup. http://192.168.0.33:4030 and 192.168.0.33:50030
